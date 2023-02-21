@@ -1,0 +1,83 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.to-do {
+  max-width: 70%;
+  margin: 0 auto;
+  border: 1px solid rgba(128, 128, 128, 0.3);
+  margin-top: 100px;
+  box-shadow: 3px 3px 3px 3px #888;
+}
+
+.to-do .title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 50px;
+  padding: 12px;
+}
+
+.to-do .title h1 {
+  width: 300px;
+  padding: 10px;
+  font-size: 18px;
+}
+
+.title .fa-solid.fa-arrows-rotate {
+  margin-left: 160px;
+  padding: 10px;
+  margin-top: 3px;
+  color: rgba(128, 128, 128, 0.425);
+}
+
+.to-do input {
+  border: 0;
+  height: 30px;
+  padding: 12px;
+}
+
+.to-do input::placeholder {
+  font-style: italic;
+  font-size: 14px;
+}
+
+.to-do input:focus {
+  outline: none;
+}
+
+.to-do-list li {
+  display: grid;
+  grid-template-columns: 1fr 5fr 1fr;
+  align-items: center;
+  padding: 5px 12px;
+  list-style: none;
+}
+
+.to-do-list ul li i {
+  margin-left: 97%;
+}
+
+hr {
+  border: none;
+  height: 1px;
+  background-color: rgba(128, 128, 128, 0.3);
+}
+
+hr:last-child {
+  background-color: transparent;
+}
+
+.to-do-list .delete-btn {
+  text-align: center;
+  padding: 10px 0;
+  background-color: rgba(128, 128, 128, 0.2);
+}
+
+.delete-btn span {
+  display: flex;
+  justify-content: center;
+  color: rgba(128, 128, 128, 0.555);
+}
