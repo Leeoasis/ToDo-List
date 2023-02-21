@@ -9,7 +9,7 @@
   margin: 0 auto;
   border: 1px solid rgba(128, 128, 128, 0.3);
   margin-top: 100px;
-  box-shadow: 3px 3px 3px 3px#888888;
+  box-shadow: 3px 3px 3px 3px #888;
 }
 
 .to-do .title {
@@ -18,7 +18,8 @@
   justify-content: space-between;
   height: 50px;
   padding: 12px;
-}  
+}
+
 .to-do .title h1 {
   width: 300px;
   padding: 10px;
@@ -30,7 +31,6 @@
   padding: 10px;
   margin-top: 3px;
   color: rgba(128, 128, 128, 0.425);
-
 }
 
 .to-do input {
@@ -80,5 +80,4 @@ hr:last-child {
   display: flex;
   justify-content: center;
   color: rgba(128, 128, 128, 0.555);
-
 }

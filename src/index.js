@@ -1,6 +1,5 @@
 import './style.css';
 
-
 const list = [
   {
     index: 0,
@@ -8,10 +7,10 @@ const list = [
     completed: true,
   },
   {
-      index: 1,
-      description: 'play a game',
-      completed: true,
-    },  
+    index: 1,
+    description: 'play a game',
+    completed: true,
+  },
   {
     index: 2,
     description: 'complete To Do list project',
