@@ -5,10 +5,11 @@
 }
 
 .to-do {
-  max-width: 500px;
+  max-width: 900px;
   margin: 0 auto;
   border: 1px solid rgba(128, 128, 128, 0.3);
   margin-top: 100px;
+  box-shadow: 5px 5px 5px 5px #ece6e6;
 }
 
 .to-do .title {
@@ -17,7 +18,8 @@
   justify-content: space-between;
   height: 30px;
   padding: 12px;
-}  
+}
+
 .to-do .title h1 {
   width: 300px;
   padding: 10px;
@@ -29,7 +31,6 @@
   padding: 10px;
   margin-top: 3px;
   color: rgba(128, 128, 128, 0.425);
-
 }
 
 .addbtn {
@@ -61,7 +62,7 @@
   column-gap: 1rem;
   align-items: center;
   border-bottom: 1px solid #ddd;
-}  
+}
 
 .check {
   width: 20px;
@@ -76,7 +77,9 @@
 
 .bin {
   margin-left: 60px;
-}  hr {
+}
+
+hr {
   border: none;
   height: 1px;
   background-color: rgba(128, 128, 128, 0.3);
@@ -96,5 +99,4 @@ hr:last-child {
   display: flex;
   justify-content: center;
   color: rgba(128, 128, 128, 0.555);
-
 }

@@ -1,5 +1,5 @@
-import "./style.css"
-import populateList from '../modules/populate.js';
+import './style.css';
+import { populateList } from '../modules/populate.js';
 import addNewTask from '../modules/add.js';
 
 const addNewTaskInput = document.querySelector('#text');
