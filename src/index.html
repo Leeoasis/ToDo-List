@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
     crossorigin="anonymous"
     referrerpolicy="no-referrer">
-    <link rel="stylesheet" href="/src/style.css"  type="text/css" >
     <title>To do list</title>
 </head>
 <body>
@@ -18,15 +17,19 @@
         </div>
             <hr />
     <form id="add-task-form">
-        <input type="text" placeholder="Add to your list..." />
+        <input type="text" id="text" name="text" placeholder="Add to your list..." />
+        <button type="submit" class="addbtn">
+            <i class="fa-solid fa-arrow-right-to-bracket"></i>
+        </button>
     </form>
     <hr />
     <ul class="to-do-list"></ul>
     <div class="delete-btn">
     <span>Clear all completed</span>
     </div>
-
+    <script type="module" src="../modules/storage.js"></script>
+    <script type="module" src="../modules/remove.js"></script>
+    <script type="module" src="./index.js"></script>
     </section>
-    <script type="module" src="/src/index.js"></script>
 </body>
 </html>

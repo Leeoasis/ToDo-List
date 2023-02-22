@@ -5,21 +5,19 @@
 }
 
 .to-do {
-  max-width: 70%;
+  max-width: 500px;
   margin: 0 auto;
   border: 1px solid rgba(128, 128, 128, 0.3);
   margin-top: 100px;
-  box-shadow: 3px 3px 3px 3px #888;
 }
 
 .to-do .title {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 50px;
+  height: 30px;
   padding: 12px;
-}
-
+}  
 .to-do .title h1 {
   width: 300px;
   padding: 10px;
@@ -31,6 +29,11 @@
   padding: 10px;
   margin-top: 3px;
   color: rgba(128, 128, 128, 0.425);
+
+}
+
+.addbtn {
+  margin-left: 200px;
 }
 
 .to-do input {
@@ -48,19 +51,32 @@
   outline: none;
 }
 
-.to-do-list li {
-  display: grid;
-  grid-template-columns: 1fr 5fr 1fr;
-  align-items: center;
-  padding: 5px 12px;
+.to-do-list {
   list-style: none;
 }
 
-.to-do-list ul li i {
-  margin-left: 97%;
+.div {
+  padding: 1rem 1rem 0.5rem;
+  display: flex;
+  column-gap: 1rem;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+}  
+
+.check {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  background-color: blue;
 }
 
-hr {
+.label {
+  width: 270px;
+}
+
+.bin {
+  margin-left: 60px;
+}  hr {
   border: none;
   height: 1px;
   background-color: rgba(128, 128, 128, 0.3);
@@ -80,4 +96,5 @@ hr:last-child {
   display: flex;
   justify-content: center;
   color: rgba(128, 128, 128, 0.555);
+
 }
