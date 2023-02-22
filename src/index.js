@@ -1,4 +1,4 @@
-import './style.css';
+import "./style.css"
 import populateList from '../modules/populate.js';
 import addNewTask from '../modules/add.js';
 
