@@ -1,37 +1,22 @@
 import './style.css';
+import { populateList } from '../modules/populate.js';
+import addNewTask from '../modules/add.js';
 
-const list = [
-  {
-    index: 0,
-    description: 'wash the dishes',
-    completed: true,
-  },
-  {
-    index: 1,
-    description: 'play a game',
-    completed: true,
-  },
-  {
-    index: 2,
-    description: 'complete To Do list project',
-    completed: true,
-  },
-  {
-    index: 3,
-    description: 'cook dinner',
-    completed: true,
-  },
-];
+const addNewTaskInput = document.querySelector('#text');
+const addTaskBtn = document.querySelector('.addbtn');
+const removeCompletedTask = document.querySelector('.delete-btn');
 
-const toDo = document.querySelector('.to-do-list');
+addTaskBtn.addEventListener('click', (e) => {
+  e.preventDefault();
+  addNewTask(addNewTaskInput);
+});
 
-list.forEach((list) => {
-  toDo.innerHTML += `
-   <li>
-       <input type="checkbox">
-       <span>${list.description}</span>
-       <i class="fa-solid fa-ellipsis-vertical"></i>
-  </li>    
-  <hr>              
-  `;
+removeCompletedTask.addEventListener('click', (e) => {
+  e.preventDefault();
+  populateList();
+});
+
+document.addEventListener('DOMContentLoaded', (e) => {
+  e.preventDefault();
+  populateList();
 });
