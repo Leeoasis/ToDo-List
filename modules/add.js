@@ -1,5 +1,5 @@
 import { Storage, getStorage } from './storage.js';
-import { populateList } from './populate.js';
+import populateList from './populate.js';
 
 const addNewTask = (input) => {
   const taskList = getStorage();
