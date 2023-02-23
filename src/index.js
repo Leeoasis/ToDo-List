@@ -1,6 +1,7 @@
 import './style.css';
 import { populateList } from '../modules/populate.js';
 import addNewTask from '../modules/add.js';
+import trashCompleted from '../modules/iteration.js';
 
 const addNewTaskInput = document.querySelector('#text');
 const addTaskBtn = document.querySelector('.addbtn');
@@ -14,6 +15,7 @@ addTaskBtn.addEventListener('click', (e) => {
 removeCompletedTask.addEventListener('click', (e) => {
   e.preventDefault();
   populateList();
+  trashCompleted();
 });
 
 document.addEventListener('DOMContentLoaded', (e) => {
