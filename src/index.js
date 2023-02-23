@@ -1,7 +1,7 @@
 import './style.css';
 import { populateList } from '../modules/populate.js';
 import addNewTask from '../modules/add.js';
-import trashCompleted from '../modules/iteration';
+import trashCompleted from '../modules/iteration.js';
 
 const addNewTaskInput = document.querySelector('#text');
 const addTaskBtn = document.querySelector('.addbtn');

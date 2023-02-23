@@ -2,7 +2,7 @@ import check from './check.js';
 import { Storage, getStorage, editTask } from './storage.js';
 import trashTask from './remove.js';
 
-const populateList = () => {
+export const populateList = () => {
   const listContainer = document.querySelector('.to-do-list');
 
   while (listContainer.lastChild) {
