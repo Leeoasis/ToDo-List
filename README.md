@@ -54,7 +54,7 @@
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- LIVE DEMO -->
-Click on this link to view the live demo: (https://leeoasis.github.io/ToDo-List/)
+Click on this link to view the live demo: ()
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
