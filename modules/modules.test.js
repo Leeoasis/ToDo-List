@@ -1,5 +1,6 @@
 // Import the function to be tested
 import addNewTask from './add.js';
+import trashTask from './remove.js';
 import { getStorage, Storage } from './storage.js';
 import { populateList } from './populate.js';
 
@@ -29,7 +30,9 @@ describe('add task', () => {
     expect(result).toEqual(expectedTask);
   });
 });
-jest.mock('./storage', () => ({
+
+// Mock the Storage and getStorage functions
+jest.mock('./storage.js', () => ({
   Storage: jest.fn(),
   getStorage: jest.fn(),
 }));
@@ -47,7 +50,7 @@ describe('remove task', () => {
       { index: 3, completed: false, description: 'Task 3' },
     ];
     // Mock the getStorage function to return the test data
-    require('./storage').getStorage.mockReturnValue(storedTasks);
+    getStorage.mockReturnValue(storedTasks);
   });
 
   afterEach(() => {
@@ -59,7 +62,7 @@ describe('remove task', () => {
     // Call the function to be tested
     trashTask(taskIndex);
     // Check that the task was removed from the list
-    expect(require('./storage').Storage).toHaveBeenCalledWith([
+    expect(Storage).toHaveBeenCalledWith([
       { index: 1, completed: false, description: 'Task 1' },
       { index: 2, completed: false, description: 'Task 3' },
     ]);
@@ -69,9 +72,9 @@ describe('remove task', () => {
     // Call the function to be tested
     trashTask(taskIndex);
     // Check that the remaining tasks have their indices updated
-    expect(require('./storage').Storage).toHaveBeenCalledWith([
+    expect(Storage).toHaveBeenCalledWith([
       { index: 1, completed: false, description: 'Task 1' },
       { index: 2, completed: false, description: 'Task 3' },
-    ]);
-  });
+    ]);
+  });
 });
