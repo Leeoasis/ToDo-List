@@ -1,6 +1,7 @@
 // Import the function to be tested
 import addNewTask from './add.js';
 import trashTask from './remove.js';
+import check from './check.js';
 import { getStorage, Storage } from './storage.js';
 import { populateList } from './populate.js';
 
@@ -30,6 +31,8 @@ describe('add task', () => {
     expect(result).toEqual(expectedTask);
   });
 });
+
+//REMOVE FUNCTION TEST
 
 // Mock the Storage and getStorage functions
 jest.mock('./storage.js', () => ({
@@ -78,3 +81,55 @@ describe('remove task', () => {
     ]);
   });
 });
+
+//CHECK FUNCTION TEST
+
+describe('check', () => {
+  test('should add line-through style and set completed to true if checkbox is checked', () => {
+    // Arrange
+    const checkbox = {
+      checked: true,
+      nextElementSibling: {
+        style: {},
+      },
+    };
+    const item = {
+      description: 'Buy milk',
+      completed: false,
+    };
+
+    // Act
+    check(checkbox, item);
+
+    // Assert
+    expect(checkbox.nextElementSibling.style.textDecoration).toBe('line-through');
+    expect(item.completed).toBe(true);
+  });
+
+  test('should remove line-through style and set completed to false if checkbox is unchecked', () => {
+    // Arrange
+    const checkbox = {
+      checked: false,
+      nextElementSibling: {
+        style: {
+          textDecoration: 'line-through',
+        },
+      },
+    };
+    const item = {
+      description: 'Buy milk',
+      completed: true,
+    };
+
+    // Act
+    check(checkbox, item);
+
+    // Assert
+    expect(checkbox.nextElementSibling.style.textDecoration).toBe('none');
+    expect(item.completed).toBe(false);
+  });
+});
+
+// POPULATE ITEMS FUNCTION TESTS
+
+

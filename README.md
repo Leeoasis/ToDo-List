@@ -85,6 +85,12 @@ To run tests, run the following command: npx hint . and npx stylelint "\*_/_.{cs
 - Twitter: [@twitterhandle](https://twitter.com/gudo_leslie)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/leslie-gudo-b08a4)
 
+👤 **Lengushuru Charles**
+
+- GitHub: [@githubhandle](https://github.com/lengushuru)
+- Twitter: [@twitterhandle](https://twitter.com/ngushuru)
+- LinkedIn: [LinkedIn](https://linkedin.com/in/lengushuru-charles-a09371111/)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- FUTURE FEATURES -->
