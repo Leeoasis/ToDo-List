@@ -19,7 +19,8 @@
       }]
     },
     "ignorePatterns": [
-      "dist/",
+      "docs/",
       "build/"
+      
     ]
   }
