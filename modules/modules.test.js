@@ -1,6 +1,7 @@
 // Import the function to be tested
 import addNewTask from './add.js';
 import trashTask from './remove.js';
+import check from './check.js';
 import { getStorage, Storage } from './storage.js';
 import { populateList } from './populate.js';
 
@@ -30,6 +31,8 @@ describe('add task', () => {
     expect(result).toEqual(expectedTask);
   });
 });
+
+// REMOVE FUNCTION TEST
 
 // Mock the Storage and getStorage functions
 jest.mock('./storage.js', () => ({
@@ -76,5 +79,91 @@ describe('remove task', () => {
       { index: 1, completed: false, description: 'Task 1' },
       { index: 2, completed: false, description: 'Task 3' },
     ]);
+  });
+});
+
+// CHECK FUNCTION TEST
+
+describe('check', () => {
+  test('should add line-through style and set completed to true if checkbox is checked', () => {
+    // Arrange
+    const checkbox = {
+      checked: true,
+      nextElementSibling: {
+        style: {},
+      },
+    };
+    const item = {
+      description: 'Buy milk',
+      completed: false,
+    };
+
+    // Act
+    check(checkbox, item);
+
+    // Assert
+    expect(checkbox.nextElementSibling.style.textDecoration).toBe('line-through');
+    expect(item.completed).toBe(true);
+  });
+
+  test('should remove line-through style and set completed to false if checkbox is unchecked', () => {
+    // Arrange
+    const checkbox = {
+      checked: false,
+      nextElementSibling: {
+        style: {
+          textDecoration: 'line-through',
+        },
+      },
+    };
+    const item = {
+      description: 'Buy milk',
+      completed: true,
+    };
+
+    // Act
+    check(checkbox, item);
+
+    // Assert
+    expect(checkbox.nextElementSibling.style.textDecoration).toBe('none');
+    expect(item.completed).toBe(false);
+  });
+});
+
+// POPULATE ITEMS FUNCTION TESTS
+describe('populateList', () => {
+  beforeEach(() => {
+    // Set the global document object to the jsdom document
+    global.document = document;
+  });
+
+  test('should add a new task to the list', () => {
+    // Arrange
+    const taskList = [
+      {
+        index: 1,
+        completed: false,
+        description: 'Task 1',
+      },
+    ];
+
+    // Mock the DOM elements
+    document.body.innerHTML = `
+    <ul id="list">
+      <li class="task">
+        <input type="checkbox" class="checkbox">
+        <p class="description">Task 1</p>
+        <i class="fas fa-trash-alt"></i>
+      </li>
+    </ul>
+    `;
+
+    // Act
+    populateList(taskList);
+
+    // Assert
+    const list = document.getElementById('list');
+    expect(list.children.length).toBe(1);
+    expect(list.children[0].children[1].textContent).toBe('Task 1');
   });
 });
