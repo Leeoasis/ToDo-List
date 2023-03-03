@@ -32,7 +32,7 @@ describe('add task', () => {
   });
 });
 
-//REMOVE FUNCTION TEST
+// REMOVE FUNCTION TEST
 
 // Mock the Storage and getStorage functions
 jest.mock('./storage.js', () => ({
@@ -82,7 +82,7 @@ describe('remove task', () => {
   });
 });
 
-//CHECK FUNCTION TEST
+// CHECK FUNCTION TEST
 
 describe('check', () => {
   test('should add line-through style and set completed to true if checkbox is checked', () => {
@@ -132,12 +132,7 @@ describe('check', () => {
 
 // POPULATE ITEMS FUNCTION TESTS
 describe('populateList', () => {
-  // Set up the jsdom environment before each test
   beforeEach(() => {
-    // Create a new jsdom environment
-    const { JSDOM } = require('jsdom');
-    const { document } = new JSDOM('', { url: 'http://localhost' }).window;
-
     // Set the global document object to the jsdom document
     global.document = document;
   });
@@ -170,8 +165,5 @@ describe('populateList', () => {
     const list = document.getElementById('list');
     expect(list.children.length).toBe(1);
     expect(list.children[0].children[1].textContent).toBe('Task 1');
-
   });
 });
-
-
