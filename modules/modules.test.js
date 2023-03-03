@@ -131,5 +131,47 @@ describe('check', () => {
 });
 
 // POPULATE ITEMS FUNCTION TESTS
+describe('populateList', () => {
+  // Set up the jsdom environment before each test
+  beforeEach(() => {
+    // Create a new jsdom environment
+    const { JSDOM } = require('jsdom');
+    const { document } = new JSDOM('', { url: 'http://localhost' }).window;
+
+    // Set the global document object to the jsdom document
+    global.document = document;
+  });
+
+  test('should add a new task to the list', () => {
+    // Arrange
+    const taskList = [
+      {
+        index: 1,
+        completed: false,
+        description: 'Task 1',
+      },
+    ];
+
+    // Mock the DOM elements
+    document.body.innerHTML = `
+    <ul id="list">
+      <li class="task">
+        <input type="checkbox" class="checkbox">
+        <p class="description">Task 1</p>
+        <i class="fas fa-trash-alt"></i>
+      </li>
+    </ul>
+    `;
+
+    // Act
+    populateList(taskList);
+
+    // Assert
+    const list = document.getElementById('list');
+    expect(list.children.length).toBe(1);
+    expect(list.children[0].children[1].textContent).toBe('Task 1');
+
+  });
+});
 
 
